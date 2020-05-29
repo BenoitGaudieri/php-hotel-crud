@@ -34,7 +34,8 @@ include_once __DIR__ . "/partials/templates/head.php";
                 </ul>
             </div>
 
-            <a href="./">&lt; back</a>
+            <a href="<?php echo $base_path; ?>/edit.php?id=<?php echo $room["id"] ?>" class="btn btn-primary">Update</a>
+
 
         </div>
     </div>

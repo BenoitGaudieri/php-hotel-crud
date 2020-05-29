@@ -1,2 +1,1 @@
-console.log("HELLO JS OK!");
-alert("HELLO");
+console.log("HELLO FROM JS");
