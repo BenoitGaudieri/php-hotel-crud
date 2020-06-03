@@ -93,8 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("HELLO JS OK!");
-alert("HELLO");
+
 
 /***/ }),
 

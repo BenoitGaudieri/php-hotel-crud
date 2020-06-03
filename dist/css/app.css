@@ -10931,5 +10931,12 @@ a.text-dark:focus {
 body {
   color: #333;
   background-color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  flex-grow: 1;
 }
 

@@ -29,6 +29,9 @@ if (!empty($_GET["del"])) {?>
                         <th>ID</th>
                         <th>Number</th>
                         <th>Floor</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -41,10 +44,10 @@ if (!empty($rooms)) {
                         <td><?php echo $room["id"] ?></td>
                         <td><?php echo $room["room_number"] ?></td>
                         <td><?php echo $room["floor"] ?></td>
-                        <td>
+                        <td class="text-right">
                             <a class="text-success" href="./show.php?id=<?php echo $room["id"]; ?>">View</a>
                         </td>
-                        <td>
+                        <td class="text-right">
                             <a class="text-primary" href="./edit.php?id=<?php echo $room["id"]; ?>">Update</a>
                         </td>
                         <td class="text-danger">

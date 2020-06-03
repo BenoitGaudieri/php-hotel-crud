@@ -31,10 +31,16 @@ include_once __DIR__ . "/partials/templates/head.php";
                     <li class="list-group-item">
                         FLOOR: <?php echo $room["floor"] ?>
                     </li>
+                    <li class="list-group-item">
+                        CREATED: <?php echo $room["created_at"] ?>
+                    </li>
+                    <li class="list-group-item">
+                        UPDATED: <?php echo $room["updated_at"] ?>
+                    </li>
                 </ul>
             </div>
 
-            <a href="<?php echo $base_path; ?>/edit.php?id=<?php echo $room["id"] ?>" class="btn btn-primary">Update</a>
+            <a href="<?php echo $base_path; ?>edit.php?id=<?php echo $room["id"] ?>" class="btn btn-primary">Update</a>
 
 
         </div>
@@ -43,5 +49,5 @@ include_once __DIR__ . "/partials/templates/head.php";
 </main>
 
 <?php
-include_once __DIR__ . "/partials/templates/head.php";
+include_once __DIR__ . "/partials/templates/footer.php";
 ?>

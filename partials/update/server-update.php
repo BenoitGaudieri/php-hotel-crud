@@ -13,15 +13,32 @@ $beds = $_POST["beds"];
 $floor = $_POST["floor"];
 
 // perform update
+// $sql = "UPDATE `stanze`
+// SET `room_number` = $room_number, `beds` = $beds, `floor` = $floor
+// WHERE `id` = $id_room";
+// $result = $conn->query($sql);
+
+// if ($result && $conn->affected_rows > 0) {
+//     header("Location: $base_path/show.php?id=$id_room");
+// } elseif ($result) {
+//     die("No room found");
+// } else {
+//     die("Error");
+// }
+
+// Update with prepare statements
 $sql = "UPDATE `stanze`
-SET `room_number` = $room_number, `beds` = $beds, `floor` = $floor
-WHERE `id` = $id_room";
+SET `room_number` = ?, `beds` = ?, `floor` = ?, `updated_at` = NOW()
+WHERE `id` = ?";
 
-$result = $conn->query($sql);
+// prepare() correctly "escape" params so SQL Injection cannot occur
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("iiii", $room_number, $beds, $floor, $id_room);
+$stmt->execute();
 
-if ($result && $conn->affected_rows > 0) {
-    header("Location: $base_path/show.php?id=$id_room");
-} elseif ($result) {
+if ($stmt && $stmt->affected_rows > 0) {
+    header("Location: $base_path" . "show.php?id=$id_room");
+} elseif ($stmt) {
     die("No room found");
 } else {
     die("Error");

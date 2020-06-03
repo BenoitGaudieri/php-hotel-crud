@@ -35,10 +35,13 @@ include_once __DIR__ . "/partials/templates/head.php";
                     <input class="btn btn-primary" type="submit" value="Save">
                 </div>
             </form>
+
+            <a href="<?php echo $base_path; ?>show.php?id=<?php echo $room["id"] ?>" class="btn btn-primary">Room
+                Details</a>
         </div>
     </div>
 </main>
 
 <?php
-include_once __DIR__ . "/partials/templates/head.php";
+include_once __DIR__ . "/partials/templates/footer.php";
 ?>

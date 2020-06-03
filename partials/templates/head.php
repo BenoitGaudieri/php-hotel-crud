@@ -15,14 +15,22 @@ include_once __DIR__ . "/../../env.php"
 <body>
 
     <header class="main-header">
-        <nav class="navbar navbar-dark navbar-light bg-dark">
-            <a class="navbar-brand" href="#">Hotel</a>
+        <nav class="navbar navbar-dark navbar-expand bg-primary">
+            <a class="navbar-brand" href="<?php echo $base_path; ?>">Hotel</a>
 
-            <ul class="navbar-nav">
-                <li class="nav-item active">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo $base_path; ?>">Index rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $base_path; ?>create.php">New room</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $base_path; ?>bookings.php">Bookings</a>
                 </li>
 
             </ul>
         </nav>
     </header>
+
+    <div id="app" class="pb-2">
